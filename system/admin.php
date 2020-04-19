@@ -322,7 +322,7 @@ declare(strict_types=1);
                     if(method_exists($this, "isFavorite") && $this->isFavorite($dir)) {
                         $this->setFavorite($dir);
                     }
-                    $dir = MediaManager::slug($dir);
+                    $dir2 = MediaManager::slug($dir);
 
                     // Handle
                     if(($status = $media_manager->deleteDir($dir, $recursive)) !== true) {
@@ -330,6 +330,7 @@ declare(strict_types=1);
                     } else if(empty($rebase)) {
                         $rebase = dirname($dir);
                     }
+                    $dir = $dir2;
                 }
                 $type = ["folder", "folders"];
             }
@@ -342,7 +343,7 @@ declare(strict_types=1);
                     if(method_exists($this, "isFavorite") && $this->isFavorite($file)) {
                         $this->setFavorite($dir);
                     }
-                    $file = MediaManager::slug($file);
+                    $file2 = MediaManager::slug($file);
 
                     // Handle
                     if(($status = $media_manager->deleteFile($file)) !== true) {
@@ -350,6 +351,7 @@ declare(strict_types=1);
                     } else if(empty($rebase)) {
                         $rebase = dirname($file);
                     }
+                    $file = $file2;
                 }
                 $type = ["file", "files"];
             }

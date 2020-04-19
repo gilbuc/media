@@ -499,7 +499,7 @@
             let url = this.href;
             if(url.indexOf("admin/media?") >= 0) {
                 url = url.replace("admin/media?", `admin/media/${action}?`);
-            } else if(url.endsWith("admin/media") >= 0) {
+            } else if(url.endsWith("admin/media")) {
                 url = url + "/list?path=/";
             }
             if(url.indexOf("media_action=") < 0) {
