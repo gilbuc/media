@@ -1,0 +1,13 @@
+##
+##  PLUS SUPPORTER PACKAGE
+##
+/plugin-plus.php
+/admin/modal-search.php
+/system/admin-plus.php
+/system/manager-plus.php
+
+##
+##  TRANSLATION DEVELOPMENT
+##
+/fetch-strings.php
+/fetch-en.php
