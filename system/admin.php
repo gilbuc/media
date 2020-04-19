@@ -341,7 +341,7 @@ declare(strict_types=1);
                 $files = !is_array($files)? [$files]: $files;
                 foreach($files AS &$file) {
                     if(method_exists($this, "isFavorite") && $this->isFavorite($file)) {
-                        $this->setFavorite($dir);
+                        $this->setFavorite($file);
                     }
                     $file2 = MediaManager::slug($file);
 
