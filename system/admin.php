@@ -53,6 +53,10 @@ declare(strict_types=1);
          |  @since  0.1.0
          */
         public function __construct() {
+            if(!Session::started()) {
+                Session::start();
+            }
+            
             if(isset($_SESSION[self::SE_STATUS]) && isset($_SESSION[self::SE_MESSAGE])) {
                 $this->status = [$_SESSION[self::SE_STATUS], $_SESSION[self::SE_MESSAGE]];
                 if(isset($_SESSION[self::SE_DATA])) {
