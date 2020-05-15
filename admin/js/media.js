@@ -330,7 +330,7 @@
     function writeEditorContent(mime, args) {
         let render = {
             link: function(markup, args) {
-                content = `<a href="${args.source}">${args.title}</a>`;
+                let content = `<a href="${args.source}">${args.title}</a>`;
                 switch(markup) {
                     case "markdown":
                         content = `[${args.title}](${args.source})`; break;
@@ -354,7 +354,7 @@
                 return content;
             },
             audio: function(markup, args) {
-                content = `<audio controls><source src="${args.source}" type="${mime}" /></audio>`;
+                let content = `<audio controls><source src="${args.source}" type="${mime}" /></audio>`;
                 switch(markup) {
                     case "textile":
                         content = "notextile.. " + content; break;
@@ -362,7 +362,7 @@
                 return content;
             },
             video: function(markup, args) {
-                content = `<video controls><source src="${args.source}" type="${mime}" /></video>`;
+                let content = `<video controls><source src="${args.source}" type="${mime}" /></video>`;
                 switch(markup) {
                     case "textile":
                         content = "notextile.. " + content; break;
